@@ -4,41 +4,48 @@ export default async function handler(req,res){
     
     switch(req.method){
         case 'GET':
-            const [] = await  pool.query('SELECT * FROM Vehiculos');
-            return res.status(200).json('OBTENIENDO INFO')
-        
+            return await getCar(req,res)
         case 'POST':
-            const { 
-                SerialNumber,
-                Brand,
-                Year,
-                Model,
-                Type,
-                Color,
-                MotorType,
-                FuelCapacity
-             } = req.body;
-             
-             const result = await pool.query('INSERT INTO Vehiculo SET ?',{
-                NoSerie:'ddedddgefasf',
-                brand: 'toyota',
-                year: 1993,
-                Model: 'Cambri',
-                type: 2,
-                Color: 'green',
-                motor_type: '4 cil',
-                fuel_capacity: 2.0 ,
-                
-            });
-            return res.status(200).json(
-                {SerialNumber,
-                Brand,
-                Year,
-                Model,
-                Type,
-                Color,
-                MotorType,
-                FuelCapacity
-            })
+           return await saveCar(req,res)
     }
+}
+
+const saveCar = async (req, res)=>{
+    const { 
+        SerialNumber,
+        Brand,
+        Year,
+        Model,
+        Type,
+        Color,
+        MotorType,
+        FuelCapacity
+     } = req.body;
+     
+     const result = await pool.query('INSERT INTO Vehiculo SET ?',{
+        NoSerie:req.body.SerialNumber,
+        brand:req.body.Brand,
+        year: req.body.Year,
+        Model: req.body.Model,
+        type: req.body.Type,
+        Color: req.body.Color,
+        motor_type: req.body.MotorType,
+        fuel_capacity: req.body.fuel_capacity,
+        
+    });
+    return res.status(200).json(
+        {SerialNumber,
+        Brand,
+        Year,
+        Model,
+        Type,
+        Color,
+        MotorType,
+        FuelCapacity
+    })
+}
+
+const getCar = async(req,res) => {
+    const [result] = await  pool.query('SELECT * FROM Vehiculo');
+    return res.status(200).json(result)
 }
