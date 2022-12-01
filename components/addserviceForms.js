@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function addserviceForms() {
+export default function AddserviceForms() {
   return (
     <div>
         <form>

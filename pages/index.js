@@ -1,10 +1,9 @@
-function HomePage(){
- return(
-  <div>
-    <form method = 'POST' action="/api/cars">
-      <button>Agregar</button>
-    </form>
-  </div>
- )
+import {AddcarsForms}from '../components/AddcarsForms'
+function HomePage() {  
+  return (
+    <div>
+        <AddcarsForms/>
+    </div>
+  )
 }
-export default HomePage
+export default HomePage;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function addinsurancefForms() {
+export default function AddinsurancefForms() {
   return (
     <div>
         <form>

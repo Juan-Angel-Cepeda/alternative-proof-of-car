@@ -1,33 +1,56 @@
 import React from 'react'
+import axios from 'axios';
 
-export default function addcarsForms() {
+export function AddcarsForms(){
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const res = await axios.post('/api/cars',{
+      SerialNumber: "kfaks" ,
+      Brand: "toyota",
+      Year: 1990,
+      Model: "Cambri",
+      Type: 2,
+      Color: "green",
+      MotorType: "4 cil",
+      FuelCapacity: 2.0,
+      idInsurance: 1,
+      IdOwner_Owner: 1,
+      idLicence_Licence: 1,
+      idService_Service: 1
+    })
+    console.log(res);
+  }
+
   return (
     <div>
-        <form>
-            <label htmlFor='SerialNumber'>Numero de Serie: </label>
-            <input type="text" name='SerialNumber'></input>
+        <form onSubmit={handleSubmit}>
 
-            <label htmlFor='Brand'>Marca: </label>
-            <input type="text" name='Brand' id='Brand'></input>
+            <label htmlFor='serialNumber'>Numero de Serie: </label>
+            <input type="text" name='serialNumber'></input>
 
-            <label htmlFor='Year'>Año: </label>
-            <input type="text" name='Year' id='Year'></input>
+            <label htmlFor='brand'>Marca: </label>
+            <input type="text" name='brand' id='brand'></input>
 
-            <label htmlFor='Model'>Modelo: </label>
-            <input type="text" name='Model' id='Model'></input>
+            <label htmlFor='year'>Año: </label>
+            <input type="text" name='year' id='year'></input>
 
-            <label htmlFor='Type '>Tipo: </label>
-            <input type="number" name='Type' id='Type'></input>
+            <label htmlFor='model'>Modelo: </label>
+            <input type="text" name='model' id='model'></input>
 
-            <label htmlFor='Color'>Color: </label>
-            <input type="text" name='Color' id='Color'></input>
+            <label htmlFor='type '>Tipo: </label>
+            <input type="number" name='type' id='type'></input>
 
-            <label htmlFor='MotorType'>Tipo de motor: </label>
-            <input type="text" name='MotorType' id='MotorType'></input>
+            <label htmlFor='color'>Color: </label>
+            <input type="text" name='color' id='color'></input>
 
-            <label htmlFor='FuelCapacity'>Capacidad: </label>
-            <input type="number" name='FuelCapacity' id='FuelCapacity'></input>
+            <label htmlFor='motorType'>Tipo de motor: </label>
+            <input type="text" name='motorType' id='motorType'></input>
 
+            <label htmlFor='fuelCapacity'>Capacidad: </label>
+            <input type="number" name='fuelCapacity' id='fuelCapacity'></input>
+
+            <button>Guardar Auto</button>
         </form>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function addlicenceForms() {
+export default function AddlicenceForms() {
   return (
     <div>
         <form>

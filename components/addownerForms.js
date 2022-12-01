@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function addownerForms() {
+export default function AddownerForms() {
   return (
     <div>        
         <form>

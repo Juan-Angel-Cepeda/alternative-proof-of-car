@@ -103,7 +103,7 @@ CREATE TABLE `Service` (
 DROP TABLE IF EXISTS `car_accident`;
 		
 CREATE TABLE `car_accident` (
-  `idAccident` INTEGER NOT NULL AUTO_INCREMENT,
+  `idAccident` INTEGER NOT NULL AUTO_IVNCREMENT,
   `idService_Service` INTEGER NOT NULL,
   `accident_description` MEDIUMTEXT NULL DEFAULT NULL,
   PRIMARY KEY (`idAccident`)
