@@ -1,6 +1,10 @@
 function HomePage(){
-  return <h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+ return(
+  <div>
+    <form method = 'POST' action="/api/cars">
+      <button>Agregar</button>
+    </form>
+  </div>
+ )
 }
 export default HomePage
