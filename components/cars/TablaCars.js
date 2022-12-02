@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios';
 
-
 const TablaCars = ({cars}) => {
     return(
         <div className='xl:grid grid-cols-4 gap-4'>
