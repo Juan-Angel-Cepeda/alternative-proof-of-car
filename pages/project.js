@@ -21,6 +21,7 @@ function HomePage({cars}) {
   return (
     <div className='w-full p-5'>
         <Menu/>
+        <AddcarsForms/>
         <TablaCars cars={cars}/>
     </div>
   );
