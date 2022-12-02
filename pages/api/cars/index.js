@@ -45,6 +45,6 @@ const saveCar = async (req, res)=>{
 }
 
 const getCar = async(req,res) => {
-    const [result] = await  pool.query('SELECT * FROM Vehiculo');
+    const [result] = await  pool.query('SELECT * FROM Vehiculo WHERE NoSerie = 1234567824');
     return res.status(200).json(result)
 }

@@ -10,12 +10,12 @@ const AddcarsForms = () => {
     initialValues: {
       SerialNumber: "" ,
       Brand: "",
-      Year: 1111,
+      Year: 0,
       Model: "",
-      Type: 1,
+      Type: 0,
       Color: "",
       MotorType: "",
-      FuelCapacity: 2.0,
+      FuelCapacity: 0,
     },
     validationSchema: Yup.object({
       SerialNumber: Yup.string().required('El numero de serie es necesario'),
@@ -105,6 +105,7 @@ const AddcarsForms = () => {
                 shadow border rounded py-2 px-3 text-gray-700 w-full"></input>
               </div>
             </div>
+            
             <div className='flex justify-center text-center mt-5'>
             <button type='submit' className='bg-blue-500 px-5 hover:bg-blue-700 py-2 px-4 rounded focus:outline-none focus:shadow-outline font-bold text-white'>Guardar Auto</button>
             </div>   

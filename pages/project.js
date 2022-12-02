@@ -2,7 +2,7 @@ import axios from 'axios';
 import AddcarsForms from '../components/AddcarsForms'
 import TablaCars from '../components/cars/TablaCars';
 import Menu from '../components/Menu';
-import AddaccidentForms from '../components/AddcarsForms';
+
 
 
 export const getServerSideProps = async context => {
