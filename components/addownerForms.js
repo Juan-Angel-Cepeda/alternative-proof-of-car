@@ -1,5 +1,8 @@
 import React from 'react'
-
+import axios from 'axios';
+import { useFormik } from 'formik';
+import * as Yup from "yup";
+import Swal from 'sweetalert2';
 
 
 export default function AddownerForms() {
@@ -26,7 +29,7 @@ export default function AddownerForms() {
         Swal.fire({
           icon: 'success',
           title: 'Creado',
-          text: `El dueño se ha creado exitosamente`
+          text: `El dueño se ha agregado exitosamente`
         });
       } catch (error) {
         console.log(error);
@@ -40,71 +43,8 @@ export default function AddownerForms() {
       
     }
   })
-
-
   return (
-    <div className="w-full ">
-        <form onSubmit={formikAddCar.handleSubmit} className = "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div className='flex'>
-              <div className='lg:w-2/5 md:w-2/5 w-full mb-2'>
-                <label htmlFor='serialNumber'>Numero de Serie: </label>
-                <input type="text" name='SerialNumber' id='SerialNumber' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.SerialNumber}  className="
-                shadow border rounded py-2 px-3 w-full text-gray-700"></input>
-                {
-                  formikAddCar.errors.SerialNumber && formikAddCar.touched.SerialNumber ? (
-                    <div>{formikAddCar.errors.serialNumber}</div>
-                  ): null
-                }
-              </div>
-
-              <div className='lg:w-2/5 md:w-2/5 w-full ml-2'>
-                <label htmlFor='brand'>Marca: </label>
-                <input type="text" name='Brand' id='Brand' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.Brand} className="
-                shadow border rounded py-2 px-3 w-full text-gray-700"></input>
-              </div>
-
-              <div className='lg:w-1/5 md:w-1/5 w-full ml-2'>
-               <label htmlFor='year'>Año: </label>
-                <input type="text" name='Year' id='Year' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.Year} className="
-                shadow border rounded py-2 px-3 text-gray-700 w-full"></input>
-
-              </div>
-            </div>
-            <div className='flex'>
-              <div className='lg:w-1/5 md:w-1/5 w-full'>
-                <label htmlFor='model'>Modelo: </label>
-                <input type="text" name='Model' id='Model' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.Model} className="
-                shadow border rounded py-2 px-3 text-gray-700 w-full"></input>
-              </div>
-              <div className='lg:w-1/5 md:w-1/5 w-full ml-2'>
-                <label htmlFor='type '>Tipo: </label>
-                <input type="number" name='Type' id='Type' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.Type} className="
-                shadow border rounded py-2 px-3 text-gray-700 w-full"></input>
-              </div>
-              <div className='lg:w-1/5 md:w-1/5 w-full ml-2'>
-                <label htmlFor='color'>Color: </label>
-                <input type="text" name='Color' id='Color' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.Color} className="
-                shadow border rounded py-2 px-3 text-gray-700 w-full"></input>
-              </div>
-              <div className='lg:w-1/5 md:w-1/5 w-full ml-2'>
-                <label htmlFor='motorType'>Tipo de motor: </label>
-                <input type="text" name='MotorType' id='MotorType' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.MotorType} className="
-                shadow border rounded py-2 px-3 text-gray-700 w-full"></input>
-              </div>
-              <div className='lg:w-1/5 md:w-1/5 w-full ml-2'>
-                <label htmlFor='fuelCapacity'>Capacidad: </label>
-                <input type="number" name='FuelCapacity' id='FuelCapacity' onChange={formikAddCar.handleChange} onBlur={formikAddCar.handleBlur} value={formikAddCar.values.FuelCapacity} className="
-                shadow border rounded py-2 px-3 text-gray-700 w-full"></input>
-              </div>
-            </div>
-            <div className='flex justify-center text-center mt-5'>
-            <button type='submit' className='bg-blue-500 px-5 hover:bg-blue-700 py-2 px-4 rounded focus:outline-none focus:shadow-outline font-bold text-white'>Guardar Auto</button>
-            </div>   
-        </form>
-    </div>
-  )
-  return (
-    <div>        
+    <div className="w-full">        
         <form>
             <label htmlFor='idOwner'>Id Dueño: </label>
             <input type="number" name='idOwner'></input>
