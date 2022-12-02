@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { Component } from 'react';
 import Link from 'next/link';
 
@@ -6,6 +7,7 @@ const Menu = () =>{
         <div className="bg-sky-500 w-full p-5">
         <div className='md:flex justify-between items-center'>
           <div className='flex items-center'>
+          <img src="./logo.png" className='w-10' alt="" />
             <h3 className="text-lg text-white font-extrabold ml-2">Proof Of Car</h3>
           </div>
           <div className='mr-5 flex'>
