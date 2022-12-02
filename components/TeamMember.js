@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 const TeamMember = ({name,des,img},any) => {
 
     return(
