@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {AddcarsForms}from '../components/AddcarsForms'
+import AddcarsForms from '../components/AddcarsForms'
+import TablaCars from '../components/cars/TablaCars';
 
 export const getServerSideProps = async context => {
   const {data:cars} = await axios.get(
@@ -15,24 +16,9 @@ export const getServerSideProps = async context => {
 function HomePage({cars}) {  
   console.log(cars);
   return (
-    <div>
+    <div className='w-full p-5'>
         <AddcarsForms/>
-
-        {cars.map(car => (
-          <div key={car.id}>
-            <h2>{car.NoSerie}</h2>
-            <p>{car.brand}</p>
-            <p>{car.Model}</p>
-            <p>{car.type}</p>
-            <p>{car.Color}</p>
-            <p>{car.motor_type}</p>
-            <p>{car.fuel_capacity}</p>
-            <p>{car.idInsurance}</p>
-            <p>{car.IdOwner_Owner}</p>
-            <p>{car.idLicence_Licence}</p>
-            <p>{car.idService_Service}</p>
-          </div>
-        ))}
+        <TablaCars cars={cars}/>
     </div>
   );
 }

@@ -23,15 +23,14 @@ const saveCar = async (req, res)=>{
      } = req.body;
      
      const result = await pool.query('INSERT INTO Vehiculo SET ?',{
-        NoSerie:req.body.SerialNumber,
-        brand:req.body.Brand,
-        year: req.body.Year,
-        Model: req.body.Model,
-        type: req.body.Type,
-        Color: req.body.Color,
-        motor_type: req.body.MotorType,
-        fuel_capacity: req.body.fuel_capacity,
-        
+        noSerie : SerialNumber,
+        Brand: Brand,
+        Year: Year,
+        Model : Model,
+        Type : Type,
+        Color : Color,
+        motor_type: MotorType,
+        fuel_capacity : FuelCapacity
     });
     return res.status(200).json(
         {SerialNumber,
