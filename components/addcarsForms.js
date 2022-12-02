@@ -8,13 +8,13 @@ const AddcarsForms = () => {
 
   const formikAddCar = useFormik({
     initialValues: {
-      SerialNumber: "a345kfd98lolai" ,
-      Brand: "Toyota",
-      Year: 2018,
-      Model: "Corola",
+      SerialNumber: "" ,
+      Brand: "",
+      Year: 1111,
+      Model: "",
       Type: 1,
-      Color: "Green",
-      MotorType: "4.0",
+      Color: "",
+      MotorType: "",
       FuelCapacity: 2.0,
     },
     validationSchema: Yup.object({

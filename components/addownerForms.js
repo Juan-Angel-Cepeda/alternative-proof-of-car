@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 
 export default function AddownerForms() {
-  const formikAddCar = useFormik({
+  const formikAddOwner = useFormik({
     initialValues: {
       idOwner: "JOHN" ,
       Fullname: "DOE",
@@ -45,7 +45,7 @@ export default function AddownerForms() {
   })
   return (
     <div className="w-full">        
-        <form>
+        <form onSubmit={{formikAddOwner}}>
             <label htmlFor='idOwner'>Id Dueño: </label>
             <input type="number" name='idOwner'></input>
 
